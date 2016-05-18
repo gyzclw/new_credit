@@ -1,5 +1,5 @@
 import {Page, NavParams, NavController} from 'ionic-angular';
-import  {Page2Service} from './page2.service.ts';
+import  {Page2Service} from './Page2.service';
 import {Page3} from '../page3/page3'
 @Page({
 	templateUrl: 'build/pages/page2/page2.html',

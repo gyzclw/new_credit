@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/core';
-import  {Page2Data} from "./paga2.data.ts"
+import  {Page2Data} from "./Page2Data"
 @Injectable()
 export class Page2Service{
 	 basemessages: any;
