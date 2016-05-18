@@ -1,67 +1,62 @@
-import {NavController,Page} from 'ionic-angular';
-import {Page2Service} from './Page2.service';
-import { Page3 } from '../page3/page3';
-
+import {Page, NavParams, NavController} from 'ionic-angular';
+import  {Page2Service} from './page2.service.ts';
+import {Page3} from '../page3/page3'
 @Page({
 	templateUrl: 'build/pages/page2/page2.html',
 	providers: [Page2Service]
 })
 export class Page2 {
-	message:any;
-	slides:any;
-	second :any;
-	timePromise :any;
-	paracont :any ;
-	paraclass :any
-	paraevent :any;
-	nav: NavController;
+	private basemessages: any;
+	private params: NavParams;
+	private nav: NavController;
 
-	mcardName: String;
-	mcardNumber: String;
-	mprovince: String;
-	mcity: String;
-	mbranch: String;
-	mphoneNumber: any;
-	
-	mySlideOptions = {
+	private shareData: any;
 
-		autoplay: 3000,
-		loop: true,
-		speed: 500
-	};
+	private mCzName: any;
+	private mCzPinyin: any;
+	private mChecked: boolean;
+	private mIdNumber: any; 
+	private mBirthday: any;
+	private mEducation: any;
+	private mMarriage: any;
+	private mLiveYear: any;
+	private mHourseStatue: any;
+	private mAnnualIncome: any;
+	private mUnit: any;
+	private mUnitYear: any;
+	private mJob: any;
+	private mIndustryCategory: any;
+	private mPost: any;
+	private mProfessional: any;
 
-	constructor(private page2Service: Page2Service, nav: NavController) {
+	constructor(private page2Service: Page2Service, nav: NavController, params: NavParams) {
 		this.nav = nav;
-		this.slides = page2Service.getSlides();
-		this.message = page2Service.getMessage();
-		this.paracont = '获取验证码';
-
-	}
-
-	setCountdown(){
-		this.second = 60;
-		this.timePromise = undefined;
-		this.paracont = '获取验证码';
-		this.paraclass = 'but_null';
-		this.paraevent = true;
-		this.timePromise = setInterval(() => {
-			if (this.second <= 0) {
-				clearInterval(this.timePromise);
-				this.timePromise = undefined;
-				this.second = 60;
-				this.paracont = '重发验证码';
-				this.paraclass = 'but_null';
-				this.paraevent = true;
-			} else {
-				this.paracont = this.second + '秒后可重发';
-				this.paraclass = 'not but_null';
-				this.second--;
-			}
-		},  1000,100);	
+		this.params = params;	  
+		this.shareData = this.params.get('mshareData');
+	  // alert(this.shareData.page1.mprovince);
+	  this.basemessages = page2Service.getBaseMessagesOrder();
 	}
 	pushPage() {
+		this.shareData.page2 = {
+			"mCzName": this.mCzName,
+			"mCzPinyin": this.mCzPinyin,
+			"mChecked": this.mChecked,
+			"mIdNumber": this.mIdNumber,
+			"mBirthday": this.mBirthday,
+			"mEducation": this.mEducation,
+			"mMarriage": this.mMarriage,
+			"mLiveYear": this.mLiveYear,
+			"mHourseStatue": this.mHourseStatue,
+			"mAnnualIncome": this.mAnnualIncome,
+			"mUnit": this.mUnit,
+			"mJob": this.mJob,
+			"mIndustryCategory": this.mIndustryCategory,
+			"mPost": this.mPost,
+			"mProfessional": this.mProfessional
+		};
 
-		this.nav.push(Page3);
+		this.nav.push(Page3, { mshareData: this.shareData });
+
 
 	}
 

@@ -9,14 +9,7 @@ messages = {
     '仓山支行营业厅----仓山区六一南路121号',
     '鼓楼支行营业厅----鼓楼区五四路157号'],
 };
-basemessages = {
-    education: ["研究生及以上", "大学本科", "大学专科", "高中/中专及以下"],
-    marriage: ["未婚", "已婚有子女", "已婚无子女", "其他"],
-    job: ["公务员", "医生", "教师", "其他事", "律师", "企业员(国有企业)", "企业员(三资企业)", "企业员(民营企业)", "军人", "学生", "个体", "其他"],
-    industry_category: ["公共管理与社会组织", "科研文化卫生教育", "金融电力电信", "邮政交通运输公用", "计算机服务与软件业", "体育娱乐", "工业商业服务业贸易", "其他"],
-    post: ["厅局级以上(含)", "处级", "科级", "一般干部", "总经理级以上(含)", "部门经理", "职员", "其他"],
-    professional: ["高级", "中级", "初级", "无"]
-}
+
 var cards = [
 {
     image: "http://www.abchina.com/abcpic/xyk/km/201404/W020140421333679796367.jpg",
@@ -61,6 +54,5 @@ cards.forEach(function callback(element, index) {
 });
 export var Page1Data = {
     messagesOrder: messages,
-    basemessagesOrder: basemessages,
     slidesOrder: slides,
 };

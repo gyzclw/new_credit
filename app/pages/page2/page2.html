@@ -3,79 +3,100 @@
 信用卡申请
 </ion-title>
 </ion-navbar>
+
 <ion-content class="page2">
 <div>
-  <h4>
-    请您选择领卡网点:
-  </h4>
-  <div class="places">
-    <ion-item>
-    <ion-label>省</ion-label>
-    <ion-select [(ngModel)]="mprovince" okText="是" cancelText="否">
-    <ion-option *ngFor="# province of message.provinces">{{province}}</ion-option>
+
+<h4>
+    您填写个人信息:
+</h4>
+ <ion-item>
+
+    <ion-label>中文姓名</ion-label>
+    <ion-input type="text" [(ngModel)]="mCzName"></ion-input>
+  </ion-item>   
+  <ion-item>
+    <ion-label>姓名拼音</ion-label>
+    <ion-input type="text" [(ngModel)]="mCzPinyin"></ion-input>
+  </ion-item>    
+<ion-item>
+  <ion-label>身份证</ion-label>
+  <ion-checkbox robibblue [(ngModel)]="mChecked"></ion-checkbox>
+</ion-item>
+<ion-item>
+    <ion-label>身份证号码</ion-label>
+    <ion-input type="number" [(ngModel)]="mIdNumber" [disabled]="!mChecked"></ion-input>
+  </ion-item> 
+<ion-item>
+  <ion-label>出生日期</ion-label>
+      <ion-input type="number" [(ngModel)]="mBirthday" ></ion-input>
+
+</ion-item>
+
+<ion-item>
+    <ion-label>教育状况</ion-label>
+    <ion-select [(ngModel)]="mEducation" okText="是" cancelText="否">
+    <ion-option *ngFor="# education of basemessages.educations">{{education}}</ion-option>
   </ion-select>
 </ion-item>
-</div>
-<div class="places">
-  <ion-item>
-  <ion-label>市</ion-label>
-  <ion-select [(ngModel)]="mcity" okText="是" cancelText="否">
-  <ion-option *ngFor="# city of message.cities">{{city}}</ion-option>
-</ion-select>
-</ion-item>
-</div>
-<div class="branch">
-  <ion-item>
-  <ion-label>市</ion-label>
-  <ion-select [(ngModel)]="mbranch" okText="是" cancelText="否">
-  <ion-option *ngFor="# branch of message.branches">{{branch}}</ion-option>
-</ion-select>
-</ion-item>
-</div>
-<div>
-  <ion-slides [options]="mySlideOptions">
-  <ion-slide *ngFor="# slide of slides">
-  <img style="width: 50%" src="{{slide.image}}">
-  <ion-item>
-  <ion-label>{{slide.name}}</ion-label>
-  <ion-radio value="radio-value">{{slide.name}}</ion-radio>
-</ion-item>
-
-</ion-slide>
-</ion-slides>
-</div>
-<div>
-  <div class="places">
-    <ion-item>
-
-    <ion-label>会员名称</ion-label>
-    <ion-input type="text" [(ngModel)]="mcardName"></ion-input>
-  </ion-item>                
-</div>
-<div class="places">
-  <ion-item>
-
-  <ion-label>会员卡编号</ion-label>
-  <ion-input type="text" [(ngModel)]="mcardNumber"></ion-input>            
-</ion-item>
-</div>
-</div>
-<div class="places">
-  <ion-item>
-  <ion-label>手机号</ion-label>
-  <ion-input type="tel" [(ngModel)]="mphoneNumber"></ion-input>   
-</ion-item>         
-</div>
-<div class="places" >
-  <button robibblue class="button"  (click)="setCountdown()">{{paracont}} </button>
-</div>
 <ion-item>
-<ion-label>我已阅读全部内容<a href="">查看详细条款</a></ion-label>
-<ion-checkbox robibblue ></ion-checkbox>
+    <ion-label>婚姻状况</ion-label>
+    <ion-select [(ngModel)]="mMarriage" okText="是" cancelText="否">
+    <ion-option *ngFor="# marriage of basemessages.marriages">{{marriage}}</ion-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label>现居住年限</ion-label>
+    <ion-input type="text" [(ngModel)]="mLiveYear" [disabled]="mChecked"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>住宅状况</ion-label>
+      <ion-input type="text" [(ngModel)]="mHourseStatue" [disabled]="mChecked"></ion-input>
+
+</ion-item>
+<ion-item>
+  <ion-label>个人年收入</ion-label>
+        <ion-input type="text" [(ngModel)]="mAnnualIncome" [disabled]="mChecked"></ion-input>
+
+</ion-item>
+<ion-item>
+  <ion-label>单位全称及部门</ion-label>
+  <ion-input type="text" [(ngModel)]="mUnit" [disabled]="mChecked"></ion-input>
+
+</ion-item>
+<ion-item>
+  <ion-label>现单位工作年限</ion-label>
+  <ion-input type="text" [(ngModel)]="mUnitYear" [disabled]="mChecked"></ion-input>
+</ion-item>
+
+<ion-item>
+    <ion-label>职业</ion-label>
+    <ion-select [(ngModel)]="mJob" okText="是" cancelText="否">
+    <ion-option *ngFor="# job of basemessages.jobs">{{job}}</ion-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+    <ion-label>行业种类</ion-label>
+    <ion-select [(ngModel)]="mIndustryCategory" okText="是" cancelText="否">
+    <ion-option *ngFor="# IndustryCategory of basemessages.industry_categorys">{{IndustryCategory}}</ion-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+    <ion-label>职务</ion-label>
+    <ion-select [(ngModel)]="mPost" okText="是" cancelText="否">
+    <ion-option *ngFor="# post of basemessages.posts">{{post}}</ion-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+    <ion-label>职称</ion-label>
+    <ion-select [(ngModel)]="mProfessional" okText="是" cancelText="否">
+    <ion-option *ngFor="# professional of basemessages.professionals">{{professional}}</ion-option>
+  </ion-select>
 </ion-item>
 <div padding>
-  <button robibblue block (click)="pushPage()">Sign In</button>
+  <button robibblue block (click)="pushPage()">下一步</button>
+</div>
 </div>
 
-</div>
+
 </ion-content>

@@ -1,21 +1,15 @@
 import {Injectable} from 'angular2/core';
-import {Page1Data} from './Page2Data'
+import  {Page2Data} from "./paga2.data.ts"
 @Injectable()
-export class Page2Service {
-    private message:any;
-    private slides:any;
+export class Page2Service{
+	 basemessages: any;
+	constructor(){
 
-    constructor() {
-    }
-
-    getMessage() {
-        this.message = Page1Data.messagesOrder;
-        return this.message;
-    }
-
-    getSlides() {
-        this.slides = Page1Data.slidesOrder;
-        return this.slides;
-    }
+	}
+	getBaseMessagesOrder(){
+		this.basemessages = Page2Data.basemessagesOrder;
+		return this.basemessages;
+	}
 
 }
+
