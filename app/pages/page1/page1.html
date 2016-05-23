@@ -12,7 +12,7 @@
     <ion-item>
     <ion-label>省</ion-label>
     <ion-select [(ngModel)]="mprovince" okText="是" cancelText="否">
-    <ion-option *ngFor="# province of message.provinces">{{province}}</ion-option>
+    <ion-option *ngFor="let province of message.provinces">{{province}}</ion-option>
   </ion-select>
 </ion-item>
 </div>
@@ -20,7 +20,7 @@
   <ion-item>
   <ion-label>市</ion-label>
   <ion-select [(ngModel)]="mcity" okText="是" cancelText="否">
-  <ion-option *ngFor="# city of message.cities">{{city}}</ion-option>
+  <ion-option *ngFor="let city of message.cities">{{city}}</ion-option>
 </ion-select>
 </ion-item>
 </div>
@@ -28,13 +28,13 @@
   <ion-item>
   <ion-label>网点</ion-label>
   <ion-select [(ngModel)]="mbranch" okText="是" cancelText="否">
-  <ion-option *ngFor="# branch of message.branches">{{branch}}</ion-option>
+  <ion-option *ngFor="let branch of message.branches">{{branch}}</ion-option>
 </ion-select>
 </ion-item>
 </div>
 <div>
   <ion-slides [options]="mySlideOptions">
-  <ion-slide *ngFor="# slide of slides">
+  <ion-slide *ngFor="let slide of slides">
   <img style="width: 50%" src="{{slide.image}}">
   <ion-item>
   <ion-label>{{slide.name}}</ion-label>

@@ -13,7 +13,7 @@
       <ion-item>
         <ion-label>省</ion-label>
         <ion-select [(ngModel)]="mHouseProv" okText="是" cancelText="否">
-          <ion-option *ngFor="# province of message.provinces">{{province}}</ion-option>
+          <ion-option *ngFor="let province of message.provinces">{{province}}</ion-option>
         </ion-select>
       </ion-item>
     </div>
@@ -21,7 +21,7 @@
       <ion-item>
         <ion-label>市</ion-label>
         <ion-select [(ngModel)]="mHouseCity" okText="是" cancelText="否">
-          <ion-option *ngFor="# city of message.cities">{{city}}</ion-option>
+          <ion-option *ngFor="let city of message.cities">{{city}}</ion-option>
         </ion-select>
       </ion-item>
     </div>
@@ -29,7 +29,7 @@
       <ion-item>
         <ion-label>县</ion-label>
         <ion-select [(ngModel)]="mHouseCounty" okText="是" cancelText="否">
-          <ion-option *ngFor="# city of message.counties">{{city}}</ion-option>
+          <ion-option *ngFor="let city of message.counties">{{city}}</ion-option>
         </ion-select>
       </ion-item>
     </div>
@@ -50,7 +50,7 @@
       <ion-item>
         <ion-label>省</ion-label>
         <ion-select [(ngModel)]="mWorkProv" okText="是" cancelText="否">
-          <ion-option *ngFor="# province of message.provinces">{{province}}</ion-option>
+          <ion-option *ngFor="let province of message.provinces">{{province}}</ion-option>
         </ion-select>
       </ion-item>
     </div>
@@ -58,7 +58,7 @@
       <ion-item>
         <ion-label>市</ion-label>
         <ion-select [(ngModel)]="mWorkCity" okText="是" cancelText="否">
-          <ion-option *ngFor="# city of message.cities">{{city}}</ion-option>
+          <ion-option *ngFor="let city of message.cities">{{city}}</ion-option>
         </ion-select>
       </ion-item>
     </div>
@@ -66,7 +66,7 @@
       <ion-item>
         <ion-label>县</ion-label>
         <ion-select [(ngModel)]="mWorkCounty" okText="是" cancelText="否">
-          <ion-option *ngFor="# city of message.counties">{{city}}</ion-option>
+          <ion-option *ngFor="let city of message.counties">{{city}}</ion-option>
         </ion-select>
       </ion-item>
     </div>

@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 import {Page2Data} from "./Page2Data"
 @Injectable()
 export class Page2Service {

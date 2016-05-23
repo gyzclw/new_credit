@@ -36,13 +36,13 @@
     <ion-item>
       <ion-label>教育状况</ion-label>
       <ion-select [(ngModel)]="mEducation" okText="是" cancelText="否">
-        <ion-option *ngFor="# education of basemessages.educations">{{education}}</ion-option>
+        <ion-option *ngFor="let education of basemessages.educations">{{education}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>婚姻状况</ion-label>
       <ion-select [(ngModel)]="mMarriage" okText="是" cancelText="否">
-        <ion-option *ngFor="# marriage of basemessages.marriages">{{marriage}}</ion-option>
+        <ion-option *ngFor="let marriage of basemessages.marriages">{{marriage}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
@@ -72,25 +72,25 @@
     <ion-item>
       <ion-label>职业</ion-label>
       <ion-select [(ngModel)]="mJob" okText="是" cancelText="否">
-        <ion-option *ngFor="# job of basemessages.jobs">{{job}}</ion-option>
+        <ion-option *ngFor="let job of basemessages.jobs">{{job}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>行业种类</ion-label>
       <ion-select [(ngModel)]="mIndustryCategory" okText="是" cancelText="否">
-        <ion-option *ngFor="# IndustryCategory of basemessages.industry_categorys">{{IndustryCategory}}</ion-option>
+        <ion-option *ngFor="let IndustryCategory of basemessages.industry_categorys">{{IndustryCategory}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>职务</ion-label>
       <ion-select [(ngModel)]="mPost" okText="是" cancelText="否">
-        <ion-option *ngFor="# post of basemessages.posts">{{post}}</ion-option>
+        <ion-option *ngFor="let post of basemessages.posts">{{post}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>职称</ion-label>
       <ion-select [(ngModel)]="mProfessional" okText="是" cancelText="否">
-        <ion-option *ngFor="# professional of basemessages.professionals">{{professional}}</ion-option>
+        <ion-option *ngFor="let professional of basemessages.professionals">{{professional}}</ion-option>
       </ion-select>
     </ion-item>
     <div padding>
