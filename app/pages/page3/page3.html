@@ -1,11 +1,130 @@
 <ion-navbar robibblue *navbar>
-<ion-title>
-信用卡申请
-</ion-title>
+  <ion-title>
+    填写基本信息
+  </ion-title>
 </ion-navbar>
 
 <ion-content class="page3">
-
-<p>ssfsdfasfsf</p>
+  <div >
+    <h4>
+      现居住地详细地址:
+    </h4>
+    <div class="places_three">
+      <ion-item>
+        <ion-label>省</ion-label>
+        <ion-select [(ngModel)]="mHouseProv" okText="是" cancelText="否">
+          <ion-option *ngFor="# province of message.provinces">{{province}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="places_three">
+      <ion-item>
+        <ion-label>市</ion-label>
+        <ion-select [(ngModel)]="mHouseCity" okText="是" cancelText="否">
+          <ion-option *ngFor="# city of message.cities">{{city}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="places_three">
+      <ion-item>
+        <ion-label>县</ion-label>
+        <ion-select [(ngModel)]="mHouseCounty" okText="是" cancelText="否">
+          <ion-option *ngFor="# city of message.counties">{{city}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label>详细地址</ion-label>
+      <ion-input type="text" [(ngModel)]="mHouseAdress"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>邮编</ion-label>
+      <ion-input type="number" [(ngModel)]="mHousePostcode"></ion-input>
+    </ion-item>
+  </div>
+  <div >
+    <h4>
+      单位详细地址:
+    </h4>
+    <div class="places_three">
+      <ion-item>
+        <ion-label>省</ion-label>
+        <ion-select [(ngModel)]="mWorkProv" okText="是" cancelText="否">
+          <ion-option *ngFor="# province of message.provinces">{{province}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="places_three">
+      <ion-item>
+        <ion-label>市</ion-label>
+        <ion-select [(ngModel)]="mWorkCity" okText="是" cancelText="否">
+          <ion-option *ngFor="# city of message.cities">{{city}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="places_three">
+      <ion-item>
+        <ion-label>县</ion-label>
+        <ion-select [(ngModel)]="mWorkCounty" okText="是" cancelText="否">
+          <ion-option *ngFor="# city of message.counties">{{city}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label>详细地址</ion-label>
+      <ion-input type="text" [(ngModel)]="mWorkAdress"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>邮编</ion-label>
+      <ion-input type="number" [(ngModel)]="mWorkPostcode"></ion-input>
+    </ion-item>
+    <div class="places" style="width:30%">
+      <ion-item>
+        <ion-label>单位电话区号(自动返填)</ion-label>
+        <ion-input type="number" [(ngModel)]="mWorkPhoneAreaCode"></ion-input>
+      </ion-item>
+    </div>
+    <div class="places" style="width:70%">
+      <ion-item>
+        <ion-label>单位电话</ion-label>
+        <ion-input type="number" [(ngModel)]="mWorkPhoneNum"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label>联系人姓名</ion-label>
+      <ion-input type="text" [(ngModel)]="mRelatedName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>联系人电话</ion-label>
+      <ion-input type="text" [(ngModel)]="mRelatedPhone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>与联系人关系</ion-label>
+      <ion-select [(ngModel)]="mRelated" okText="是" cancelText="否">
+        <ion-option *ngFor="">{{education}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>电子邮箱</ion-label>
+      <ion-input type="text" [(ngModel)]="mWorkEmail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>对账单发生方式</ion-label>
+      <ion-select [(ngModel)]="mSendType" okText="是" cancelText="否">
+        <ion-option *ngFor="">{{education}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>推荐人姓名</ion-label>
+      <ion-input type="text" [(ngModel)]="mRecommendedName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>推荐人电话</ion-label>
+      <ion-input type="text" [(ngModel)]="mRecommendedPhone"></ion-input>
+    </ion-item>
+    <div padding>
+      <button robibblue block (click)="pushPage()">下一步</button>
+    </div>
+  </div>
 
 </ion-content>

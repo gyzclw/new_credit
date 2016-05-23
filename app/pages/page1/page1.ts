@@ -22,7 +22,7 @@ export class Page1 {
 	private paraevent: any;
 	private nav: NavController;
 
-	
+
 	private mprovince: String;
 	private mcity: String;
 	private mbranch: String;
@@ -30,7 +30,7 @@ export class Page1 {
 	private mcardName: String;
 	private mcardNumber: String;
 	private mphoneNumber: any;
-	
+
 	mySlideOptions = {
 
 		autoplay: 3000,
@@ -39,10 +39,10 @@ export class Page1 {
 	};
 
 
-	constructor(private page2Service: Page1Service, nav: NavController) {
+	constructor(private page1Service: Page1Service, nav: NavController) {
 		this.nav = nav;
-		this.slides = page2Service.getSlides();
-		this.message = page2Service.getMessage();
+		this.slides = page1Service.getSlides();
+		this.message = page1Service.getMessage();
 		this.paracont = '获取验证码';
 
 	}
@@ -66,7 +66,7 @@ export class Page1 {
 				this.paraclass = 'not but_null';
 				this.second--;
 			}
-		},  1000,100);	
+		},  1000,100);
 	}
 	seeMore() {
 		this.nav.push(Page3);
@@ -86,7 +86,7 @@ export class Page1 {
 			this.nav.push(Page2, { mshareData: this.shareData });
 		};
 
-	
+
 
 	}
 
