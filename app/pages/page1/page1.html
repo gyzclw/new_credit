@@ -1,84 +1,86 @@
 <ion-navbar robibblue *navbar>
-<ion-title>
-信用卡申请
-</ion-title>
+  <ion-title>
+    信用卡申请
+  </ion-title>
 </ion-navbar>
 <ion-content class="page1">
-<div>
-  <h4>
-    请您选择领卡网点:
-  </h4>
-  <div class="places">
+  <div>
+
+    <h4>
+      请您选择领卡网点:
+    </h4>
+    <div class="places">
+      <ion-item>
+        <ion-label>省</ion-label>
+        <ion-select [(ngModel)]="mProvince" okText="是" cancelText="否">
+          <ion-option *ngFor="let province of message.provinces">{{province}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="places">
+      <ion-item>
+        <ion-label>市</ion-label>
+        <ion-select [(ngModel)]="mCity" okText="是" cancelText="否">
+          <ion-option *ngFor="let city of message.cities">{{city}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="branch">
+      <ion-item>
+        <ion-label>网点</ion-label>
+        <ion-select [(ngModel)]="mBranch" okText="是" cancelText="否">
+          <ion-option *ngFor="let branch of message.branches">{{branch}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div>
+      <ion-slides [options]="mySlideOptions">
+        <ion-slide *ngFor="let slide of slides">
+          <img style="width: 50%" src="{{slide.image}}">
+          <p>{{slide.name}}</p>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="places">
+
     <ion-item>
-    <ion-label>省</ion-label>
-    <ion-select [(ngModel)]="mprovince" okText="是" cancelText="否">
-    <ion-option *ngFor="let province of message.provinces">{{province}}</ion-option>
-  </ion-select>
-</ion-item>
-</div>
-<div class="places">
-  <ion-item>
-  <ion-label>市</ion-label>
-  <ion-select [(ngModel)]="mcity" okText="是" cancelText="否">
-  <ion-option *ngFor="let city of message.cities">{{city}}</ion-option>
-</ion-select>
-</ion-item>
-</div>
-<div class="branch">
-  <ion-item>
-  <ion-label>网点</ion-label>
-  <ion-select [(ngModel)]="mbranch" okText="是" cancelText="否">
-  <ion-option *ngFor="let branch of message.branches">{{branch}}</ion-option>
-</ion-select>
-</ion-item>
-</div>
-<div>
-  <ion-slides [options]="mySlideOptions">
-  <ion-slide *ngFor="let slide of slides">
-  <img style="width: 50%" src="{{slide.image}}">
-  <ion-item>
-  <ion-label>{{slide.name}}</ion-label>
-  <ion-radio value="radio-value" >{{slide.name}}</ion-radio>
-</ion-item>
+      <ion-label>请选择信用卡</ion-label>
+      <ion-select [(ngModel)]="mCardName" okText="是" cancelText="否">
+        <ion-option *ngFor="let slide of slides" >{{slide.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    </div>
+    <div class="places">
 
-</ion-slide>
-</ion-slides>
-</div>
-<div>
-  <div class="places">
     <ion-item>
+      <ion-label>领卡方式</ion-label>
+      <ion-select [(ngModel)]="mgetType" okText="是" cancelText="否">
+        <ion-option *ngFor="let gettype of gettypes" >{{slide.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    </div>
+    <div class="places">
 
-    <ion-label>会员名称</ion-label>
-   。 <ion-input type="text" [(ngModel)]="mcardName"></ion-input>
-  </ion-item>
-</div>
-<div class="places">
-  <ion-item >
+      <ion-item >
+        <ion-label >手机号</ion-label>
+        <ion-input type="tel" [(ngModel)]="mPhoneNumber" maxlength=11></ion-input>
+      </ion-item>
+    </div>
 
-  <ion-label >会员卡编号</ion-label>
-  <ion-input type="text" [(ngModel)]="mcardNumber"></ion-input>
-</ion-item>
-</div>
-</div>
-<div class="places">
-  <ion-item>
-  <ion-label>手机号</ion-label>
-  <ion-input type="tel" [(ngModel)]="mphoneNumber"></ion-input>
-</ion-item>
-</div>
-<div class="places" >
-  <button robibblue class="button"  (click)="setCountdown()">{{paracont}} </button>
-</div>
-<ion-item>
-<ion-label>我已阅读全部内容</ion-label>
-<ion-checkbox robibblue [(ngModel)]="mcheckbox"></ion-checkbox>
-</ion-item>
-<p>
-  <a (click)="seeMore()">查看详细条款</a>
-</p>
-<div padding>
-  <button robibblue block (click)="pushPage()">下一步</button>
-</div>
+    <div class="places">
+      <button robibblue class="button" (click)="setCountdown()">{{paracont}}
+      </button>
+    </div>
+    <ion-item>
+      <ion-label>我已阅读全部内容</ion-label>
+      <ion-checkbox robibblue [(ngModel)]="mCheckbox"></ion-checkbox>
+    </ion-item>
+    <p>
+      <a (click)="seeMore()">查看详细条款</a>
+    </p>
+    <div padding>
+      <button robibblue block (click)="pushPage()">下一步</button>
+    </div>
 
-</div>
+  </div>
 </ion-content>

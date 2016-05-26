@@ -1,6 +1,5 @@
 import { App, Platform} from 'ionic-angular';
 import { Login } from './pages/login/login';
-
 @App({
 	template: '<ion-nav [root]="rootPage"></ion-nav>',
     config: {} // http://ionicframework.com/docs/v2/api/config/Config/

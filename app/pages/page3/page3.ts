@@ -8,41 +8,40 @@ import {Detail} from "../detail/detail";
 })
 export class Page3 {
   private nav: NavController;
-  private params: NavParams;
   private shareData: any;
 
   private message: any;
 
-  private mHouseProv: any;
-  private mHouseCity: any;
-  private mHouseCounty: any;
-  private mHouseAdress: any;
-  private mHousePostcode: any;
+  private mHouseProv: any="福建";
+  private mHouseCity: any="福州";
+  private mHouseCounty: any="福清市";
+  private mHouseAdress: any="音西镇城丰世纪园1号楼1602";
+  private mHousePostcode: any="350300";
 
-  private mWorkProv: any;
-  private mWorkCity: any;
-  private mWorkCounty: any;
+  private mWorkProv: any ="福建";
+  private mWorkCity: any ="福州";
+  private mWorkCounty: any="鼓楼区";
 
-  private mWorkAdress: any;
-  private mWorkPostcode: any;
-  private mWorkPhoneAreaCode: any;
-  private mWorkPhoneNum: any;
-  private mWorkEmail: any;
+  private mWorkAdress: any="五四北路天骅大厦2088";
+  private mWorkPostcode: any="350000";
+  private mWorkPhoneAreaCode: any="0591";
+  private mWorkPhoneNum: any ="87737103";
 
-  private mRelatedName: any;
-  private mRelatedPhone: any;
-  private mRelated: any;
-  private mSendType: any;
-  private mRecommendedName: any;
-  private mRecommendedPhone: any;
+  private mRelatedName: any ="张三";
+  private mRelatedPhone: any="13232133211";
+  private mRelated: any="朋友";
+  private mSendType: any ='电子邮箱';
+  private mEmail: any="jg.huang@meganet.com.cn";
+
+  private mRecommendedName: any="李四";
+  private mRecommendedPhone: any='13232132312';
 
 
 
   constructor(private page1Service: Page1Service, nav: NavController, params: NavParams) {
-    this.params = params;
     this.nav = nav;
     this.message = page1Service.getMessage();
-    this.shareData = this.params.get('mshareData');
+    this.shareData = params.get('mshareData');
 
   }
   pushPage() {
@@ -59,7 +58,7 @@ export class Page3 {
       "mWorkPostcode": this.mWorkPostcode,
       "mWorkPhoneAreaCode": this.mWorkPhoneAreaCode,
       "mWorkPhoneNum": this.mWorkPhoneNum,
-      "mWorkEmail": this.mWorkEmail,
+      "mEmail": this.mEmail,
       "mRelatedName": this.mRelatedName,
       "mRelatedPhone": this.mRelatedPhone,
       "mRelated": this.mRelated,

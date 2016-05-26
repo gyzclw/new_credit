@@ -1,13 +1,111 @@
-<!--
-  Generated template for the DetailPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-navbar *navbar>
-  <ion-title>detail</ion-title>
+<ion-navbar robibblue *navbar>
+  <ion-title>个人资料</ion-title>
 </ion-navbar>
 
 <ion-content padding class="detail">
-  
+
+  <ion-card>
+    <ion-card-header>
+      您的个人信息
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        中文姓名：{{shareData.page2.mCzName}}
+        拼音/英文姓名：{{shareData.page2.mCzPinyin}}
+      </p>
+
+      <p>
+        出生日期：{{shareData.page2.mBirthday}}
+        证件类型：{{shareData.page2.mIdType}}
+      </p>
+
+      <p>
+        证件号码：{{shareData.page2.mIdNumber}}
+        婚姻状况：{{shareData.page2.mMarriage}}
+      </p>
+      <p>
+        手机号码：{{shareData.page2.mPhoneNumber}}
+        教育程度：{{shareData.page2.mEducation}}
+      </p>
+      <p>
+        住房情况：{{shareData.page2.mHourseStatue}}
+        月供：0
+      </p>
+      <p>
+        现住址居住年限：{{shareData.page2.mLiveYear}}
+        个人年收入：{{shareData.page2.mAnnualIncome}})
+      </p>
+      <p>
+        单位及部门名称：{{shareData.page2.mUnit}}
+        现单位工作年限：{{shareData.page2.mUnitYear}}
+      </p>
+      <p>
+        职业：{{shareData.page2.mJob}}
+        行业种类：{{shareData.page2.mIndustryCategory}}
+      </p>
+      <p>
+        职称：{{shareData.page2.mPost}}
+        职务：{{shareData.page2.mProfessional}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      您的联系人信息
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>中文姓名：{{shareData.page3.mRelatedName}}
+      </p>
+
+      <p>
+        与申请人关系：{{shareData.page3.mRelated}}
+      </p>
+      <p>
+        联系人手机：{{shareData.page3.mRelatedPhone}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      本次申请信用卡信息
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>申请信用卡种类：{{shareData.page1.mCardName}}
+      </p>
+      <p>
+        时间：2016年03月30日
+      </p>
+      <p>
+        领卡方式：{{shareData.page1.mgetType}}
+      </p>
+      <p>
+        网点：{{shareData.page1.mBranch}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      密码函及对账单寄送信息
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>对账单发送方式：{{shareData.page3.mSendType}}
+      </p>
+      <p>
+        对账单发送地址：{{shareData.page3.mEmail}}
+      </p>
+      <p>
+        密码函寄送地址：{{shareData.page3.mEmail}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <div padding>
+    <button robibblue block (click)="pushPage()">提交</button>
+  </div>
 </ion-content>

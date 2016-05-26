@@ -101,17 +101,17 @@
     <ion-item>
       <ion-label>与联系人关系</ion-label>
       <ion-select [(ngModel)]="mRelated" okText="是" cancelText="否">
-        <ion-option *ngFor="">{{education}}</ion-option>
+        <ion-option *ngFor="let relate of message.related">{{relate}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>电子邮箱</ion-label>
-      <ion-input type="text" [(ngModel)]="mWorkEmail"></ion-input>
+      <ion-input type="text" [(ngModel)]="mEmail"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>对账单发生方式</ion-label>
       <ion-select [(ngModel)]="mSendType" okText="是" cancelText="否">
-        <ion-option *ngFor="">{{education}}</ion-option>
+        <ion-option *ngFor="let sendtype of message.sendtypes">{{sendtype}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>

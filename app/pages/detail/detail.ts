@@ -1,5 +1,5 @@
-import {Page, NavController} from 'ionic-angular';
-
+import {Page, NavController, NavParams} from 'ionic-angular';
+import  {SucessPage }from "../sucess/sucess";
 /*
   Generated class for the DetailPage page.
 
@@ -10,5 +10,15 @@ import {Page, NavController} from 'ionic-angular';
   templateUrl: 'build/pages/detail/detail.html',
 })
 export class Detail {
-  constructor(public nav: NavController) {}
+  private nav: NavController;
+  private shareData: any;
+
+  constructor(nav: NavController, params: NavParams) {
+    this.nav=nav;
+    this.shareData=params.get('mshareData');
+  }
+
+    pushPage() {
+      this.nav.push(SucessPage, { mshareData: this.shareData });
+    }
 }

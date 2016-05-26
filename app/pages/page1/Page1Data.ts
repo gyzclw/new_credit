@@ -10,6 +10,9 @@ messages = {
   branches: ['台江支行营业厅----台江区下杭路52号',
     '仓山支行营业厅----仓山区六一南路121号',
     '鼓楼支行营业厅----鼓楼区五四路157号'],
+    related:['夫妻'	, '父子' , '母子' , '兄弟姐妹','朋友','同事'],
+    sendtypes:['电子邮箱','邮寄'],
+    gettypes:['上门自提','邮寄']
 };
 
 var cards = [
@@ -47,7 +50,7 @@ var cards = [
     name: "喜羊羊与灰太狼联名卡"
   }
 ];
-cards.forEach(function callback(element, index) {
+cards.forEach((element, index) =>{
   slides.push({
     image: element.image,
     id: index,

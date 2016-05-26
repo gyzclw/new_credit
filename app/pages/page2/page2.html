@@ -13,19 +13,22 @@
     <ion-item>
 
       <ion-label>中文姓名</ion-label>
-      <ion-input type="text" [(ngModel)]="mCzName"></ion-input>
+      <ion-input type="text" [(ngModel)]="mCzName" maxlength=6></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>姓名拼音</ion-label>
-      <ion-input type="text" [(ngModel)]="mCzPinyin"></ion-input>
+      <ion-input type="text" [(ngModel)]="mCzPinyin" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>证件类型</ion-label>
+      <ion-select [(ngModel)]="mIdType" okText="是" cancelText="否">
+        <ion-option *ngFor="let idtype of basemessages.idtypes">{{idtype}}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>身份证</ion-label>
-      <ion-checkbox robibblue [(ngModel)]="mChecked"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>身份证号码</ion-label>
-      <ion-input type="number" [(ngModel)]="mIdNumber" [disabled]="!mChecked"></ion-input>
+      <ion-label>证江号码</ion-label>
+      <ion-input type="number" [(ngModel)]="mIdNumber" [disabled]="!mChecked"  maxlength=18></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>出生日期</ion-label>
@@ -47,17 +50,18 @@
     </ion-item>
     <ion-item>
       <ion-label>现居住年限</ion-label>
-      <ion-input type="text" [(ngModel)]="mLiveYear"></ion-input>
+      <ion-input type="text" [(ngModel)]="mLiveYear" maxlength=3></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label>住宅状况</ion-label>
-      <ion-input type="text" [(ngModel)]="mHourseStatue"></ion-input>
-
+      <ion-select [(ngModel)]="mHourseStatue" okText="是" cancelText="否">
+        <ion-option *ngFor="let status of basemessages.housestatus">{{status}}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>个人年收入</ion-label>
       <ion-input type="text" [(ngModel)]="mAnnualIncome"></ion-input>
-
     </ion-item>
     <ion-item>
       <ion-label>单位全称及部门</ion-label>
